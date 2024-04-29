@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: lightcyan;
+}
+
+
+
+.container {
+    text-align: center;
+}
+
+.progressContainer {
+    width: 500px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.progressBarBack {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: lightgray;
+    border: none;
+    z-index: -1;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.progressBarFront {
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    background-color: green;
+    border: none;
+    z-index: -1;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .4s linear width;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid lightgray;
+    color: lightgray;
+}
+
+.step.checked {
+    color: green;
+    border-color: green;
+    transition: all .4s linear;
+    transition-delay: 0.3s;
+}
+
+.step.checked small {
+    position: absolute;
+    bottom: -20px;
+    font-family: cursive;
+}
+
+.btn {
+    background-color: deepskyblue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 70px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+}
+
+.btn:hover{
+    opacity: .5;
+}
+
+.btn:active {
+    transform: scale(0.90);
+}
+
+.btn:disabled {
+    background-color: lightskyblue;
+}
+
+@media (max-width: 500px ) {
+    .progressContainer {
+        width: 90vw;
+    }
+}
